@@ -1,0 +1,32 @@
+# Application Briefing
+
+A client needs an API where he can aggregate his website statistics. This API needs to be as lightweight and flexible as possible. 
+We'd like you to put this together from scratch, so no frameworks please!
+
+More specifically, the client makes a request to fetch data for number of visits to his website for a given period (e.g. the current month). 
+The data of individual visits must be pulled from various sources (databases/services/files) and then aggregated. The result must then be returned to the client.
+
+Example response:
+
+```
+{"error": false, "message": "", data: ["Google Analytics" : 150, "Positive Guys": 5000]}
+```
+
+Development Requirements
+
+* Must be able to support multiple sources at once. It needs to be as simple as possible to install a new source.
+* Must be able to handle a wide variety of sources.
+* Must gracefully handle errors.
+* Must return JSON. No XML or HTML please :-)
+
+This project should be designed as infrastructure rather than fully fleshed application. 
+Your implementation should just show the process you would follow and the architecture you would implement. 
+You are welcome to create skeleton methods/classes, then document the process that would happen in said method and return a static value (or call next method, whatever). 
+If you prefer to do an actual working implementation, you may use 3rd party libraries to interact with the data sources, and use fake data sources as placeholders.
+
+
+//clarifications 
+
+You are expected to come up with different sample inputs that are ultimately turned into the example output. 
+As the task, itself states, we are after a number of visits, so a collection of visits is the input you want. 
+What forms a visit and how do you ultimately get the collection is up to you.
