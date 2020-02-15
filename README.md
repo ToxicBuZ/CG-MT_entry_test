@@ -12,7 +12,7 @@ For a thorough briefing of the assignment please check api_task.txt <br/>
 
 ### Prerequisites
 
-* PHP version 7+ ( to install LAMP version of PHP, please visit https://www.apachefriends.org/index.html)
+* PHP version 7+ ( to install LAMPP version of PHP, please visit https://www.apachefriends.org/index.html)
 * Carbon  ( for more info about the Carbon class, please visit https://carbon.nesbot.com/docs/ )
 
 ###  Data for input
