@@ -20,7 +20,7 @@ class parser{
         $this->error = false;
         $this->read_file();
         $this->parse_data();
-        $this->message = "";
+     
      
     }
 

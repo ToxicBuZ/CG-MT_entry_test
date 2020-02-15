@@ -36,14 +36,12 @@ $end = Carbon::createFromFormat('d/m/Y',$_GET['end']);
 $period = new CarbonPeriod($start,$end);
 
 
-//Lookup every day in periods and sum the parsers results
+//Lookup every day in periods and sum the results of the parsers
 $aggregated = [];
 
 foreach($parsers as $p)
 {
     if(!$p->error){
-        $result['error'] = $p->error;
-        $result['message'] = $p->message;
         foreach($period as $day)
         {
             $day_text = $day->format('d/m/Y');
@@ -54,7 +52,7 @@ foreach($parsers as $p)
             {
                 $aggregated[$p->title] += $p->parsed_data[$day_text]['clicks'];
             }
-
+            
         }
     }
     else
@@ -65,13 +63,16 @@ foreach($parsers as $p)
 }
 
 
-//echo result
-$result['data']=$aggregated;
-echo json_encode($result,JSON_UNESCAPED_SLASHES);
+// Error Control
+// If wrong file is loaded, throw error
+if ($result['error'] == true){
+    echo json_encode($result,JSON_UNESCAPED_SLASHES);
+}
 
-
-// test echo
-
-//echo '<pre>';
-//print_r($result);
-//echo '</pre>';
+// If correct file is loaded, present results
+else{
+    $result['error'] = $p->error;
+    $result['message'] = $p->message;
+    $result['data']=$aggregated;
+    echo json_encode($result, JSON_UNESCAPED_SLASHES);
+}
