@@ -1,4 +1,4 @@
-## CG_entry_test
+## CG-MT_entry_test
 
 For a thorough briefing of the assignment please check api_task.txt <br/>
 
