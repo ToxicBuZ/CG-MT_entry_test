@@ -1,4 +1,4 @@
-## CG-MT_entry_test
+## Data Aggregation App
 
 For a thorough briefing of the assignment please check api_task.txt <br/>
 
